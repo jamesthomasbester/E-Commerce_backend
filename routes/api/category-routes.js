@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Category, Product } = require('../../models');
+const { Category, Product, Tag } = require('../../models');
 
 // The `/api/categories` endpoint
 
@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
   // find all categories
   // be sure to include its associated Products
   try{
-    const categoryDataGet = await Category.findAll() 
+    const categoryDataGet = await Category.findAll({include: [{model: Product}]}) 
     res.status(200).json(categoryDataGet);
   }catch(error){
     res.status(500).json(error);
@@ -17,8 +17,8 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
-  const categoryDataGetId = await Category.findAll({where: { id: req.params.id }})
   try{
+    const categoryDataGetId = await Category.findByPk(req.params.id, {include: [{ model: Product}]})
     res.status(200).json(categoryDataGetId);
   }catch(error)
   {
@@ -29,8 +29,8 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   // create a new category
   try{
-    const categoryDataPost = await Category.create({})
-    res.status(200).json(categoryDataPost);
+      const categoryDataPost = await Category.create(req.body)
+      res.status(200).json(categoryDataPost);  
   }catch(error){
     res.status(500).json(error)
   }
@@ -39,7 +39,7 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   // update a category by its `id` value
   try{
-    const categoryDataPut = await Category.update({where: { id: req.params.id}})\
+    const categoryDataPut = await Category.update(req.body, {where: { id: req.params.id}})
     res.status(200).json(categoryDataPut);  
   }catch(error){
     res.status(500).json(error);
