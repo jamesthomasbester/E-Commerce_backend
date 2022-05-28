@@ -7,14 +7,15 @@ Idealy to use with a store front end.
 
 ## Screenshots
 
-![Screenshot 2022-05-05 221622](https://user-images.githubusercontent.com/46641259/166921363-9f35784c-ce55-46c4-a1aa-4b8e29634a89.png)
-
+![e-com](https://user-images.githubusercontent.com/46641259/170813661-78722f1d-0f79-4db2-8bba-b9cc58398717.png)
 
 ## Demo
 
 No Production Demo at this time. However, see below for .gif's that demo the usage.
 
+![ecom](https://user-images.githubusercontent.com/46641259/170813712-b5e59d2f-544e-4e4a-bdf0-83fb5c6975ec.gif)
 
+![ecom2](https://user-images.githubusercontent.com/46641259/170813856-1931e82d-9906-4f53-a0f3-37eb3196e5e0.gif)
 
 
 ## License
@@ -27,10 +28,12 @@ No Production Demo at this time. However, see below for .gif's that demo the usa
 Install my-project with node package manager
 
 ```bash
-    git clone https://github.com/jamesthomasbester/NoteTakerApp.git
-    cd ~/NoteTakerApp
+    git clone https://github.com/jamesthomasbester/E-commerce_backend.git
+    cd ~/E-commerce_backend
     npm install
 ```
+![start](https://user-images.githubusercontent.com/46641259/170813866-76d5ce10-4bdc-4d60-a1a5-31630c06076d.gif)
+
 Mysql is a requirment to persistantly store data.
 https://www.mysql.com/downloads/
 
